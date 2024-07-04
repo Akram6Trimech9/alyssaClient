@@ -1,0 +1,65 @@
+<div class="wrapper">
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-6 side-image"
+                [ngStyle]="{'background-image': 'url(assets/cuisine.jpg)', 'background-position': 'center', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'border-radius': '10px 0 0 10px', 'position': 'relative' }">
+                <!-- Image and Text Content -->
+                <div class="overlay"></div>
+                <div class="logo">
+                    <a>
+                        <div>Alyssa</div>
+                        <div>100% Tunisian </div>
+                    </a>
+                </div>
+                <div class="text">
+                    <p>Join us and enjoy the authentic taste of Tunisian food! </p>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <!-- Your form content -->
+                <div class="input-box">
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px; margin-bottom: 30px;">
+                    <div class="input-field input-field-container">
+                        <button type="button" class="submit" style="display: flex; justify-content: center; align-items: center; flex-direction: row; gap: 30px; background-color:#b49383; color: white ;"><span> Login using  Google</span> <i class="fa fa-google"></i>  </button>
+                    </div>
+                    <div class="input-field input-field-container">
+                        <button type="button" class="submit" style="display: flex; justify-content: center; align-items: center; flex-direction: row; gap: 30px; background-color:#b49383; color: white ;"><span> Login using  Facebook</span> <i class="fa fa-facebook"></i>  </button>
+                    </div>
+                </div>
+                    <form [formGroup]="loginForm" (ngSubmit)="signUp()">
+
+                        <div class="input-field input-field-container">
+                            <input type="text" class="input" id="email" formControlName="email" required
+                                autocomplete="off">
+                            <label for="email">Email</label>
+                            <div class="error" *ngIf="loginForm.get('email')?.hasError('email') ">
+                                Insert a valid email
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+
+
+                        <div class="input-field input-field-container ">
+                            <input type="password" class="input" id="password" formControlName="password" required>
+                            <label for="password">Password</label>
+                            <div class="error" *ngIf="loginForm.get('password')?.hasError('minLength') ">
+                                Minimum length is 6 characters
+                            </div>
+                        </div>
+                        <div class="input-field input-field-container">
+                            <button type="submit" class="submit">Login</button>
+                        </div>
+                    </form>
+
+                    <div class="signin">
+                        <span>If you are new here, <a routerLink="/signup">sign up here</a>.</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

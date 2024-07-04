@@ -1,0 +1,177 @@
+
+	 <div class="home">
+		<div class="parallax-window">
+			<img src="assets/images/bg_1.gif" alt="Background Image">
+			<div class="parallax_background"></div>
+		</div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content text-center">
+							<div class="home_subtitle page_subtitle">Discover the Flavors of Tunisia</div>
+							<div class="home_title"><h1>An Extraordinary Culinary Journey</h1></div>
+							<div class="home_text ml-auto mr-auto">
+								<p>Indulge in the rich flavors of Tunisian cuisine, where tradition meets innovation. Our handpicked selection of authentic Tunisian food and products will transport you to the heart of Tunisia. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+ 
+	</div>
+	
+
+	<!-- Intro -->
+
+	<div class="intro">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="intro_content">
+						<div class="intro_subtitle page_subtitle">Something new</div>
+						<div class="intro_title"><h2>An Extraordinery Experience</h2></div>
+						<div class="intro_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti. Vivamus luctus diam eu neque rutrum, vitae aliquet dolor venenatis. Nulla consequat fringilla massa.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xl-4 col-md-6 intro_col">
+							<div class="intro_image"><img src="assets/images/intro_1.jpg" alt="https://unsplash.com/@quanle2819"></div>
+						</div>
+						<div class="col-xl-4 col-md-6 intro_col">
+							<div class="intro_image"><img src="assets/images/intro_2.jpg" alt="https://unsplash.com/@fabmag"></div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<!-- Video -->
+
+	<div class="video_section">
+		<div class="background_image" style="background-image:url(assets/images/video.jpg)"></div>
+		<div class="video_section_content d-flex flex-column align-items-center justify-content-center text-center">
+			<div class="video_section_title">Food for the soul</div>
+			<div class="video_section_icon"><a class="vimeo video_button" href="https://player.vimeo.com/video/99340873?autoplay=1&loop=1&title=0&autopause=0"><i class="fa fa-play" aria-hidden="true"></i></a></div>
+		</div>
+	</div>
+
+	<!-- Signature Dish -->
+
+	<div class="sig">
+		<div class="sig_content_container">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7">
+						<div class="sig_content">
+							<div class="sig_subtitle page_subtitle">Something new</div>
+							<div class="sig_title"><h1>Our Signature Dish</h1></div>
+							<div class="rating_r sig_rating rating_r_5"><i></i><i></i><i></i><i></i><i></i></div>
+							<div class="sig_name_container d-flex flex-row align-items-start justify-content-start">
+								<div class="sig_name">Pork Tenderloin marinated in Green Pepper</div>
+								<div class="sig_price ml-auto">$20</div>
+							</div>
+							<div class="sig_content_list">
+								<ul class="d-flex flex-row align-items-center justify-content-start">
+									<li>Pork</li>
+									<li>Tenderloin</li>
+									<li>Green Pepper</li>
+									<li>Veggies</li>
+								</ul>
+							</div>
+							<div class="button sig_button trans_200"><a href="#">Order Now</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sig_image_container">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 offset-lg-5">
+						<div class="sig_image">
+							<div class="background_image" style="background-image:url(assets/images/sig.jpg)"></div>
+							<img src="assets/images/sig.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- The Menu -->
+
+	<div class="themenu">
+	 <div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="themenu_title_bar_container">
+						<!-- <div class="themenu_stars text-center page_subtitle">5 Stars</div> -->
+						<div class="themenu_rating text-center">
+							<div class="rating_r rating_r_5"><i></i><i></i><i></i><i></i><i></i></div>
+						</div>
+						<div class="themenu_title_bar d-flex flex-column align-items-center justify-content-center">
+							<div class="themenu_title">OUR PRODUCTS</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul class="mystyle-products">
+				<li class="product" *ngFor="let item of allProducts">
+					<a href="14-single-product.html">
+						<span class="onsale">{{item.category.title}}</span>
+						<img alt="" class="attachment-shop_catalog " src="{{item.images[0].url}}" />
+						<h3>{{item.title}}</h3>
+						<span class="price">
+							<del> <span class="amount">{{item.prix}} $</span> </del>
+							<ins> <span class="amount">269.000 $</span> </ins>
+							<span class="sale-tag sale-tag-square">-33%</span>
+						</span>
+					</a>
+					<a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
+						Mua ngay
+					</a>
+					<a (click)="addToCart(item)" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View">						
+						<i class="fa fa-shopping-cart add-to-cart-icon"></i>
+					</a>
+				</li>
+				 
+			</ul> 
+
+		</div>		
+	</div>
+
+	<!-- Reservations -->
+
+	<div class="reservations text-center">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="assets/images/bg_1.gif" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="reservations_content d-flex flex-column align-items-center justify-content-center">
+						<div class="res_stars page_subtitle">5 Stars</div>
+						<div class="res_title">Make a Reservation</div>
+						<div class="res_form_container">
+							<form action="#" id="res_form" class="res_form">
+								<div class="d-flex flex-sm-row flex-column align-items-center justify-content-start">
+									<input type="text" id="datepicker" class="res_input" required="required">
+									<input type="text" class="res_input timepicker" required="required">
+									<select class="res_select">
+										<option disabled="" selected="">2 person</option>
+										<option>3 person</option>
+										<option>4 person</option>
+										<option>5 person</option>
+										<option>6 person</option>
+									</select>
+								</div>
+								<button class="res_button">Make a Reservation</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>

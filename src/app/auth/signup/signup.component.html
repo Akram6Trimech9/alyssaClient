@@ -1,0 +1,83 @@
+<div class="wrapper">
+    <div class="container main">
+      <div class="row">
+        <div class="col-md-6 side-image" [ngStyle]="{'background-image': 'url(assets/cuisine.jpg)', 'background-position': 'center', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'border-radius': '10px 0 0 10px', 'position': 'relative' }">
+          <!-- Image and Text Content -->
+          <div class="overlay"></div>
+          <div class="logo">
+            <a  >
+                <div>Alyssa</div>
+                <div>100% Tunisian  </div>
+            </a>
+        </div>
+          <div class="text">
+            <p>Join us and enjoy the authentic taste of Tunisian food!  </p>
+          </div>
+        </div>
+        <div class="col-md-6 right">
+          <!-- Your form content -->
+          <div class="input-box" *ngIf="!validate ;else temp">
+
+            <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+                <div class="input-field input-field-container">
+                    <input type="text" class="input" id="firstName" formControlName="firstName" required autocomplete="off">
+                    <label for="firstName">First Name</label>
+                    <div class="error" *ngIf="signUpForm.get('firstName')?.hasError('required')">
+                        First name  is required
+                      </div>
+                  </div>
+                  
+                <div class="input-field input-field-container">
+                  <input type="text" class="input" id="lastName" formControlName="lastName" required autocomplete="off">
+                  <label for="lastName">Last Name</label>
+                  <div class="error" *ngIf="signUpForm.get('lastName')?.hasError('required')">
+                    Last name  is required
+                  </div>
+                </div>
+                <div class="input-field input-field-container">
+                  <input type="text" class="input" id="email" formControlName="email" required autocomplete="off">
+                  <label for="email">Email</label>
+                  <div class="error" *ngIf="signUpForm.get('email')?.hasError('email') ">
+                    Insert a valid email
+                  </div>
+                </div>
+              <div>           
+              
+             </div>
+             <div class="input-field input-field-container ">
+
+                   <input type="tel" class="input" id="mobile" formControlName="mobile" required autocomplete="off" >
+                    <label for="mobile">Mobile </label>
+                    <div class="error" *ngIf="signUpForm.get('mobile')?.hasError('required')">
+                      Mobile is required
+                    </div>
+                  </div>
+  
+                <div class="input-field input-field-container ">
+                  <input type="password" class="input" id="password" formControlName="password" required>
+                  <label for="password">Password</label>
+                  <div class="error" *ngIf="signUpForm.get('password')?.hasError('minLength') ">
+                    Minimum length is 6 characters
+                 </div>
+                </div>
+                <div class="input-field input-field-container">
+                  <button type="submit" class="submit">Sign Up</button>
+                </div>
+              </form>
+             
+            <div class="signin">
+              <span>Already have an account? <a  routerLink="/login">Log in here</a></span>
+            </div>
+        </div>  
+        <ng-template #temp>
+            <!-- Message to the user -->
+            <div class="message-container">
+              <span class="message">Check your email for a verification link. We've sent you an email with instructions.</span>
+            </div>
+          </ng-template>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  
